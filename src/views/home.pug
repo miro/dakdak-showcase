@@ -4,6 +4,7 @@ block content
   h1 Testikotisivu
 
   each image in images
-    img(src=image.urls.thumb)
+    a(href='/image/' + image.storageId)
+      img(src=image.urls.thumb)
 
   p yeah!!
