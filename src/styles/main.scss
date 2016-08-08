@@ -10,6 +10,9 @@
 @import './global/form';
 @import './global/card';
 
-// # View-specific styles
+// # Partial-specific styles
 @import './header';
 @import './footer';
+
+// # View-specific styles
+@import './home';

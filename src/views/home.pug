@@ -1,10 +1,12 @@
 extends layout
 
 block content
-  h1 Testikotisivu
 
-  each image in images
-    a(href='/image/' + image.storageId)
-      img(src=image.urls.thumb)
+  .image-grid__wrapper
+    each image in images
+      a.image-grid__item(
+        href='/image/' + image.storageId
+        style={ 'background-image': 'url(' + image.urls.thumb + ')' }
+      )
 
-  p yeah!!
+
