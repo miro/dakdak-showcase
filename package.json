@@ -35,6 +35,8 @@
     "morgan": "^1.7.0",
     "pg": "^6.0.3",
     "pug": "^2.0.0-beta4",
+    "purecss-sass": "^0.6.0",
+    "viewports": "^0.6.4",
     "winston": "^2.2.0"
   }
 }

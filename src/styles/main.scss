@@ -1,3 +1,11 @@
-body {
-  background-color: red;
-}
+// # Imports from libraries
+@import '../../node_modules/purecss-sass/vendor/assets/stylesheets/purecss'; // TODO: after dev include only modules which are used
+@import '../../node_modules/viewports/viewports';
+
+// # General styles
+@import './global/mixins';
+@import './global/variables';
+@import './global/icons';
+@import './global/globals';
+@import './global/form';
+@import './global/card';

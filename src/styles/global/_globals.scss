@@ -1,0 +1,69 @@
+// TODO: we really need to do some general styles for header elements,
+// currently I am constantly finetuning margins on them
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700italic,700);
+
+html, body {
+  min-height: 100%;
+  background-color: #187389;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a, a:visited {
+  color: $green;
+}
+a:hover {
+  color: $green--light;
+}
+
+#app {
+  background-color: $bg-color--light;
+}
+
+.app-container {
+  margin: 20px auto 30px auto;
+  width: 90%;
+  max-width: 1020px;
+
+  @include viewports (up-to small) {
+    width: 100%;
+  }
+}
+
+.view__title {
+  margin-left: 10px;
+}
+
+
+// Button related
+button, .btn {
+  @extend .pure-button;
+}
+.btn,
+.btn:visited,
+.btn:hover {
+  color: $white;
+}
+
+.btn-primary {
+  @extend .pure-button-primary;
+  background-color: $green;
+
+  // hack to avoid some weird 0.7m top margin that comes from purecss on <=480px breakpoint
+  margin-top: 0 !important;
+}
+.btn-secondary {
+  color: $white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: $blue--light;
+}
+
+.app__title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: italic;
+}
