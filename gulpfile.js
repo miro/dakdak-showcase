@@ -20,6 +20,7 @@ gulp.task('sass', () => {
 gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('./src/styles/*.scss', ['sass'], () => livereload.reload());
+  gulp.watch('./src/views/**/*', () => livereload.reload());
 });
 
 
