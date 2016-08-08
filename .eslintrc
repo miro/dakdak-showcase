@@ -10,6 +10,11 @@
     "node": true,
     "mocha": true
   },
+
+  "globals": {
+    "fetch": true // isomorphic-fetch
+  },
+
   "plugins": [
     "mocha",
     "import"

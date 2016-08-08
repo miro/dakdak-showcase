@@ -12,4 +12,5 @@ cfg.dbConfig = {
   }
 };
 
+cfg.dakdakApiUrl = 'http://localhost:5000';
 module.exports = cfg;
