@@ -5,14 +5,10 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const errorHandler = require('errorhandler');
 const flash = require('express-flash');
-// const expressValidator = require('express-validator');
-// const multer = require('multer');
-// const upload = multer({ dest: path.join(__dirname, 'uploads') });
 const path = require('path');
 
-const log = require('./logger')(__filename);
-const cfg = require('../config');
 const image = require('./core/image-core');
+
 
 // # Initialize Express app
 const app = express();
@@ -71,6 +67,7 @@ app.use((req, res, next) => {
 // });
 
 
+
 // # Routes
 app.get('/', (req, res) => image.getLatest()
   .then(images => res.render('home', { images }))
@@ -82,13 +79,15 @@ app.get('/image/:id', (req, res) => image.get(req.params.id)
   .catch(error => res.render('error', { error }))
 );
 
+
 // # Static content
 app.use('/', express.static(`${__dirname}/../dist/`));
 
 
 app.use(errorHandler());
 
-// Start
+
+// # Start
 app.listen(app.get('port'), () => {
   console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
