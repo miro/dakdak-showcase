@@ -1,0 +1,66 @@
+.header__wrapper {
+  background-color: $green;
+  border-bottom: 10px solid lighten($green, 5%);
+}
+
+.header__title {
+  @extend .pure-menu-heading;
+  @extend .app__title;
+  color: $white;
+  font-size: 30px;
+  padding: 0 20px;
+
+  user-select: none;
+
+  &.header__title--mini { display: none; }
+
+  @include viewports(up-to small) {
+    &.header__title--full { display: none; }
+    &.header__title--mini { display: inline-block; }
+  }
+  @include viewports(tiny) {
+    font-size: 24px;
+    padding-right: 10px;
+  }
+}
+
+
+.header__links {
+  @extend .pure-menu-list;
+
+  li {
+    @extend .pure-menu-item;
+    color: $white;
+  }
+
+  .header__link {
+    @extend .pure-menu-link;
+    color: $white;
+    margin: 0 1px;
+    cursor: pointer;
+
+    user-select: none;
+
+    &:hover, &:focus {
+      border-radius: 2px;
+      color: $green;
+    }
+
+    @include viewports(tiny) {
+      padding: 8px 8px;
+    }
+
+    i {
+      @include viewports(up-to small) {
+        font-size: 22px;
+      }
+      @include viewports(tiny) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include viewports(up-to small) {
+    .link__title { display: none; }
+  }
+}

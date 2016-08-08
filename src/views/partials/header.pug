@@ -1,2 +1,22 @@
+-
+  linkItems = [
+    { title: '', icon: 'home', href: '/' },
+    { title: 'Paikat & Ihmiset', icon: 'tietokanta', href: '/metadata' },
+    { title: 'Uploadaa', icon: 'upload', href: '/upload', requiresAuth: true },
+    { title: 'Kuvat', icon: 'kuvat', href: '/kuvat', requiresAuth: true }
+  ]
+
+
 a(href='/')
-  h2 Kajaaniskate
+
+  .header__wrapper.pure-menu.pure-menu-horizontal
+    a(href='/')
+      h1.header__title.header__title--full Kajaaniskate.net
+    a(href='/')
+      h1.header__title.header__title--mini kniskt
+
+    ul.header__links
+      each link in linkItems
+        li.header__link
+          i(class='icon-' + link.icon)
+          span #{link.title}
