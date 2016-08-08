@@ -10,7 +10,6 @@ const flash = require('express-flash');
 // const upload = multer({ dest: path.join(__dirname, 'uploads') });
 const path = require('path');
 
-const db = require('./database');
 const image = require('./core/image-core');
 
 const app = express();
