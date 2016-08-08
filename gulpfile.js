@@ -11,7 +11,7 @@ gulp.task('clean', callback => {
 });
 
 gulp.task('sass', () => {
-  gulp.src('./src/styles/*.scss')
+  gulp.src('./src/styles/**/*.scss')
     .pipe(sass({ errLogToConsole: true }))
     .pipe(autoprefixer())
     .pipe(livereload())
