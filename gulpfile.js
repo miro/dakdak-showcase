@@ -1,6 +1,7 @@
 const gulp         = require('gulp');
 const sass         = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const runSequence  = require('run-sequence');
 const livereload   = require('gulp-livereload');
 const del          = require('del');
 
@@ -23,11 +24,20 @@ gulp.task('watch', () => {
   gulp.watch('./src/views/**/*', () => livereload.reload());
 });
 
-
-// NOTE: untested
-gulp.task('build', ['clean'], () => {
-  gulp.src(['index.html', './js/**', './css/**', './fonts/**', './img/**'], { base: './app' })
+gulp.task('copyAssets', () => {
+  gulp.src(['./assets/**'])
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['sass', 'watch'], () => {});
+gulp.task('build', ['clean', 'copyAssets', 'sass'], (callback) => {
+  runSequence(
+    'clean',
+    'copyAssets',
+    'sass',
+    callback
+  );
+  // gulp.src(['./assets/**'], { base: './app' })
+  //   .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['build', 'watch']);

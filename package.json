@@ -4,7 +4,8 @@
   "description": "Public gallery-website for the dakdak-project",
   "main": "server.js",
   "scripts": {
-    "build-styles": "gulp"
+    "build:watch": "gulp",
+    "build": "gulp build"
   },
   "author": "Miro Nieminen <miro.nieminen@gmail.com>",
   "license": "MIT",
@@ -17,7 +18,8 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-livereload": "^3.8.1",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "run-sequence": "^1.2.2"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
