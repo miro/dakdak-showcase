@@ -1,0 +1,34 @@
+{
+  "name": "dakdak-showcase",
+  "version": "0.0.1",
+  "description": "Public gallery-website for the dakdak-project",
+  "main": "server.js",
+  "scripts": {
+    "build-styles": "gulp"
+  },
+  "author": "Miro Nieminen <miro.nieminen@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb-base": "^5.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-mocha": "^4.3.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.14.0",
+    "jade": "^1.11.0",
+    "knex": "^0.11.9",
+    "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta4"
+  }
+}
