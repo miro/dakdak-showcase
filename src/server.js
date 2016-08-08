@@ -10,6 +10,7 @@ const flash = require('express-flash');
 // const upload = multer({ dest: path.join(__dirname, 'uploads') });
 const path = require('path');
 
+const log = require('./logger')(__filename);
 const cfg = require('../config');
 const image = require('./core/image-core');
 
@@ -73,10 +74,12 @@ app.use((req, res, next) => {
 // # Routes
 app.get('/', (req, res) => image.getLatest()
   .then(images => res.render('home', { images }))
+  .catch(error => res.render('error', { error }))
 );
 
 app.get('/image/:id', (req, res) => image.get(req.params.id)
   .then(imageModel => res.render('image', { image: imageModel }))
+  .catch(error => res.render('error', { error }))
 );
 
 // # Static content
