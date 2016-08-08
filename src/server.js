@@ -67,7 +67,6 @@ app.use((req, res, next) => {
 // });
 
 
-
 // # Routes
 app.get('/', (req, res) => image.getLatest()
   .then(images => res.render('home', { images }))
