@@ -10,7 +10,7 @@ gulp.task('clean', callback => {
 });
 
 gulp.task('sass', () => {
-  gulp.src('./styles/*.scss')
+  gulp.src('./src/styles/*.scss')
     .pipe(sass({ errLogToConsole: true }))
     .pipe(autoprefixer())
     .pipe(livereload())
@@ -19,7 +19,7 @@ gulp.task('sass', () => {
 
 gulp.task('watch', () => {
   livereload.listen();
-  gulp.watch('./styles/*.scss', ['sass'], () => livereload.reload());
+  gulp.watch('./src/styles/*.scss', ['sass'], () => livereload.reload());
 });
 
 
