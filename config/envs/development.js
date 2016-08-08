@@ -13,4 +13,6 @@ cfg.dbConfig = {
 };
 
 cfg.dakdakApiUrl = 'http://localhost:5000';
+cfg.storageUrl = 'https://storage.googleapis.com/kajaaniskate/'; // HOX prod bucket
+
 module.exports = cfg;
