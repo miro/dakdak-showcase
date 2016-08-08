@@ -9,4 +9,14 @@ block content
         style={ 'background-image': 'url(' + image.urls.thumb + ')' }
       )
 
+  script.
+    function parallax() {
+      var scrolled = $(window).scrollTop();
+      $('.image-grid__item').css('background-position-y', -(scrolled * 0.1) + 'px');
+    }
+
+    $(window).scroll(function(event) {
+      console.log('trolol!!');
+      parallax();
+    });
 
