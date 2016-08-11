@@ -78,6 +78,8 @@ app.get('/image/:id', (req, res) => image.get(req.params.id)
   .catch(error => res.render('error', { error }))
 );
 
+app.get('/ig', (req, res) => res.render('instagram-test'));
+
 
 // # Static content
 app.use('/', express.static(`${__dirname}/../dist/`));
