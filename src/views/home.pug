@@ -8,10 +8,20 @@ block content
 
   .image-grid__wrapper
     each image in images
-      a.image-grid__item(
-        href='/image/' + image.storageId
-        style={ 'background-image': 'url(' + image.urls.thumb + ')' }
-      )
+
+      if image.trickName
+        a.image-grid__item.image-grid__item--wide(
+          href='/image/' + image.storageId
+          style={ 'background-image': 'url(' + image.urls.thumb + ')' }
+        )
+          .meta__wrapper
+            h2 #{image.title}
+            h3 #{image.trickName}
+      else
+        a.image-grid__item(
+          href='/image/' + image.storageId
+          style={ 'background-image': 'url(' + image.urls.thumb + ')' }
+        )
 
   script.
     function parallax() {
