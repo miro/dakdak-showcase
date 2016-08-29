@@ -1,5 +1,9 @@
 extends layout
 
+block topcontent
+  - let heroImage = images[0]
+  include partials/jumbotron
+
 block content
 
   .image-grid__wrapper
